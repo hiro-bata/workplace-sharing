@@ -1,0 +1,15 @@
+<section class="post-index">
+    <h1>投稿一覧</h1>
+    <% posts.each do |post| %>
+    <div>
+        <p><%= post.store_name %></p>
+        <p><%= post.access %></p>
+        <p><%= post.content %></p>
+    <% if current_user == post.user %>
+        <%= link_to "削除", posts_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger" %>
+    <% end %>
+    </div>
+    <% end %>
+    <%= paginate posts %>
+</section>
+

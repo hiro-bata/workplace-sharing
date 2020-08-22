@@ -9,7 +9,7 @@
 <% if logged_in? %>
     <section class="main">
         <div class="main-content">
-            <button class="main-btn2"><a href="#">投稿一覧</a></button>
+            <button class="main-btn2 btn btn-primary"><%= link_to "投稿一覧へ", posts_path, class: "text-white" %></button>
             <p>
                 ああああああああああああああああああああああああ<br>あああああああああああああああああ
             </p>
@@ -18,11 +18,11 @@
 <% else %>
     <section class="main">
         <div class="main-content">
-            <button class="main-btn2"><a href="#">投稿一覧</a></button>
+            <button class="main-btn2 btn btn-primary"><%= link_to "投稿一覧へ", posts_path, class: "text-white" %></button>
             <p>
                 ああああああああああああああああああああああああ<br>あああああああああああああああああ
             </p>
-            <button class="main-btn2"><%= link_to "ユーザー登録", new_user_path %></button>
+            <button class="main-btn2 btn btn-primary"><%= link_to "ユーザー登録へ", new_user_path, class: "text-white" %></button>
             <p>
                 ああああああああああああああああああああああああ<br>あああああああああああああああああ
             </p>    
