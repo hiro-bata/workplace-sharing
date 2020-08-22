@@ -3,6 +3,7 @@
             <h1><a href="/">Workplace Sharing</a></h1>
             <% if logged_in? %>
             <ul>
+                <li><%= link_to "My page", user_path(current_user) %></li>
                 <li><%= link_to "投稿一覧", posts_path %></li>
                 <li><%= link_to "新規投稿", new_post_path %></li>
                 <li><%= link_to "ログアウト", logout_path, method: :delete %></li>

@@ -231,12 +231,34 @@ footer div h1 {
 
 /* ------posts/new終わり------ */
 
-/*------posts/index始まり------*/
-.post-index {
-  padding-top: 100px;
-  padding-bottom: 100px;
+
+/*------post-page始まり------*/
+.posts-page {
+  padding: 100px 350px;
+}
+
+.posts-page h1 {
+  margin-bottom: 50px;
+  font-size: 50px;
   text-align: center;
 }
 
+/*------posts-page終わり------*/
 
-/*------posts/index終わり------*/
+/*------mypage始まり------*/
+.mypage {
+  padding: 100px 200px;
+}
+
+.mypage h1 {
+  margin-bottom: 50px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.mypage h3 {
+  text-align: left;
+}
+
+
+/*------mypage終わり------*/
