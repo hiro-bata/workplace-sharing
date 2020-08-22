@@ -6,6 +6,16 @@
             </p>    
         </div>
     </section>
+<% if logged_in? %>
+    <section class="main">
+        <div class="main-content">
+            <button class="main-btn2"><a href="#">投稿一覧</a></button>
+            <p>
+                ああああああああああああああああああああああああ<br>あああああああああああああああああ
+            </p>
+        </div>
+    </section>
+<% else %>
     <section class="main">
         <div class="main-content">
             <button class="main-btn2"><a href="#">投稿一覧</a></button>
@@ -18,4 +28,5 @@
             </p>    
         </div>
     </section>
+<% end %>
     
