@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.order(id: :desc).page(params[:page])
+    @favorites = current_user.favorite_posts.includes(:user)
   end
   
   def new
@@ -20,11 +21,18 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
+  
   private
   
   def user_params 
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+  
+  def correct_user
+    @post = current_user.posts.find_by(id: params[:id])
+    unless @post
+      redirect_to root_url  
+    end
   end
 
 

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :require_user_logged_in, only: [:new, :create, :destroy]
+  before_action :require_user_logged_in, only: [:new, :create]
   before_action :correct_user, only: [:destroy]
   
   def index
@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    @post.image = "default.jpg"
     if @post.save
       flash[:success] = "投稿が完了しました。"
       redirect_to posts_url
@@ -29,10 +30,18 @@ class PostsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
   
+  def search
+    if params[:access].present?
+      @posts = Post.where('access LIKE ?', "%#{params[:access]}%")
+    else
+      @posts = Post.none
+    end
+  end
+  
   private
   
   def post_params
-    params.require(:post).permit(:store_name, :access, :content)
+    params.require(:post).permit(:store_name, :access, :content, :image)
   end
   
   def correct_user
@@ -41,5 +50,6 @@ class PostsController < ApplicationController
       redirect_to root_url  
     end
   end
+
   
 end
