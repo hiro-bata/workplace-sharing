@@ -1,14 +1,48 @@
-<div class="post-index">
     <% posts.each do |post| %>
-    <div>
-        <p><%= post.store_name %></p>
-        <p><%= post.access %></p>
-        <p><%= post.content %></p>
-    <% if current_user == post.user %>
-        <%= link_to "削除", posts_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger" %>
-    <% end %>
+    <p class="post-person">投稿者：<%= post.user.name %></p>
+    <div class="post-index">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th class="border pl-2 bg-primary text-white">
+                        <% if logged_in? %>
+                            <div class="float-left"><span class="table-store-name">店名：<%= post.store_name %></span><span class="table-access">最寄駅：<%= post.access %></span></div>
+                            <div class="post-btn clear">
+                                <%= render "favorites/favorite_button", post: post %>
+                                <% if current_user == post.user %>
+                                    <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm btn-delete" %>
+                                <% else %>
+                                    <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm btn-delete visibility-hidden" %>
+                                <% end %>
+                            </div>
+                        <% else %>
+                            <span class="table-store-name">店名：<%= post.store_name %></span><span class="table-access">最寄駅：<%= post.access %></span>
+                            <div class="post-btn clear">
+                                <% if current_user == post.user %>
+                                    <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm btn-delete" %>
+                                <% else %>
+                                    <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm btn-delete visibility-hidden" %>
+                                <% end %>
+                            </div>
+                        <% end %>
+                    </th>
+                </tr>
+                <tr style="white-space:pre-line">
+                    <td class="border px-4 table-content">
+                        <div class="image">
+                            <% if post.image? %>
+                                <%= image_tag post.image.url %>
+                            <% else %>
+                                <%= image_tag "default.jpg" %>
+                            <% end %>
+                        </div>
+                        <div><%= post.content %><div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <% end %>
     <%= paginate posts %>
-</div>
+
 

@@ -2,30 +2,54 @@
         <div class="top-content">
             <h2>Workplace Sharing</h2>
             <p>
-                ああああああああああああああああああああああああ<br>あああああああああああああああああ
-            </p>    
+                作業はかどる快適カフェのシェアサイト
+            </p>
+        </div><br><br><br><br>
+        <div class="top-search-form">
+        <%= form_with url: search_posts_path, method: :get, local: true do |f| %>
+          <%= f.text_field :access, placeholder: " エリアから探す/例：渋谷", class: "top-search-textarea" %>
+          <%= f.submit :search, class: "btn btn-primary btn-sm top-btn-search" %>
+        <% end %>
         </div>
     </section>
 <% if logged_in? %>
     <section class="main">
-        <div class="main-content">
+            <div>
             <button class="main-btn2 btn btn-primary"><%= link_to "投稿一覧へ", posts_path, class: "text-white" %></button>
             <p>
-                ああああああああああああああああああああああああ<br>あああああああああああああああああ
+                投稿一覧から快適な作業空間をチェック！
             </p>
-        </div>
+            </div>
+            <div>
+            <button class="main-btn2 btn btn-primary"><%= link_to "検索ページへ", search_posts_path, class: "text-white" %></button>
+            <p>
+                最寄駅から検索！
+            </p>
+            </div>
     </section>
 <% else %>
-    <section class="main">
+    <section>
         <div class="main-content">
-            <button class="main-btn2 btn btn-primary"><%= link_to "投稿一覧へ", posts_path, class: "text-white" %></button>
-            <p>
-                ああああああああああああああああああああああああ<br>あああああああああああああああああ
-            </p>
-            <button class="main-btn2 btn btn-primary"><%= link_to "ユーザー登録へ", new_user_path, class: "text-white" %></button>
-            <p>
-                ああああああああああああああああああああああああ<br>あああああああああああああああああ
-            </p>    
+            <div>
+                <button class="main-btn2 btn btn-primary"><%= link_to "投稿一覧へ", posts_path, class: "text-white" %></button>
+                <p>
+                    投稿一覧から快適な作業空間をチェック！
+                </p>
+            </div>
+            <div>
+                <button class="main-btn2 btn btn-primary"><%= link_to "検索ページへ", search_posts_path, class: "text-white" %></button>
+                <p>
+                    最寄駅から検索！
+                </p>
+            </div>
+            <div>
+                <button class="main-btn2 btn btn-primary"><%= link_to "ユーザー登録へ", new_user_path, class: "text-white" %></button>
+                <p>
+                    登録を行うとMy pageに<br>
+                    気に入ったお店を登録できたり、<br>
+                    お店の投稿が可能に！<br>
+                </p> 
+            </div>
         </div>
     </section>
 <% end %>

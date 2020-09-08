@@ -2,10 +2,17 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
 }
 
 .container {
-  width: 1200px;
+  width: 1300px;
 }
 
 a {
@@ -18,6 +25,29 @@ a:hover {
   text-decoration: none;
 }
 
+.display-block {
+  display: block;
+}
+
+::placeholder {
+  font-size: 12px;
+  position: relative;
+  bottom: 2px;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.post-person {
+  margin-bottom: 0px;
+  margin-top: 30px;
+}
+
+.float-left {
+  float: left;
+}
+
 
 /*------共通部分始まり------*/
 header {
@@ -27,9 +57,8 @@ header {
   height: 90px;
 }
 
-header h1 {
-    margin-top: 25px;
-    font-size: 30px;
+header h1{
+    margin-top: 7px;
 }
 
 header nav {
@@ -41,7 +70,8 @@ header nav {
 header nav ul {
   display: flex;
   list-style: none;
-  margin-top: 33px;
+  margin-top: 15px;
+  margin-left: 440px;
 }
 
 header nav ul li {
@@ -52,6 +82,7 @@ header nav ul li {
 footer {
   background-color: #000000;
   height: 90px;
+  margin-top: auto;
 }
 
 footer div {
@@ -60,14 +91,14 @@ footer div {
   color: #ffffff;
 }
 
-footer div p {
+footer p {
   margin-top: 30px;
   margin-right: 30px;
 }
 
-footer div h1 {
-    font-size: 30px;
-    margin-top: 25px;
+footer h1 {
+  font-size: 30px;
+  margin-top: 25px;
 }
 
 
@@ -96,16 +127,32 @@ footer div h1 {
 
 /* main */
 .main {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
   padding-top: 50px;
   padding-bottom: 80px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.main .main-content {
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  width: 1100px;
+  padding-top: 50px;
+  padding-bottom: 80px;
+  margin: 0 auto;
   text-align: center;
 }
 
 .main-content a {
   color: black;
+}
+
+.main p {
+  margin-top: 30px;
 }
 
 .main-content p {
@@ -115,8 +162,28 @@ footer div h1 {
 .main-btn2 {
   margin-top: 40px;
   width: 150px;
-  
 }
+
+.top-search-form {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.top-search-textarea {
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+}
+
+.top-btn-search {
+  height: 40px;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
 
 /* ------toppage終わり------ */
 
@@ -208,16 +275,16 @@ footer div h1 {
   font-size: 50px;
 }
 
-.post-form form label {
+.post-form label {
   display: block;
-  width: 308px;
+  width: 580px;
   text-align: left;
   margin: 0 auto;
   margin-top: 30px;
   font-size: 20px;
 }
 
-.post-form form input {
+.post-form input {
   width: 300px;
   display: block;
   margin: 0 auto;
@@ -229,12 +296,22 @@ footer div h1 {
   width: 200px !important;
 }
 
+.post-form input {
+  width: 600px!important;
+}
+
+.post-form textarea {
+  width: 600px;
+  margin: 0 auto;
+  white-space: pre-wrap;
+}
+
 /* ------posts/new終わり------ */
 
 
-/*------post-page始まり------*/
+/*------posts/index.html始まり------*/
 .posts-page {
-  padding: 100px 350px;
+  padding: 100px 200px;
 }
 
 .posts-page h1 {
@@ -243,22 +320,762 @@ footer div h1 {
   text-align: center;
 }
 
-/*------posts-page終わり------*/
+/*------posts/index.html終わり------*/
 
-/*------mypage始まり------*/
-.mypage {
-  padding: 100px 200px;
-}
+/*------users/show.html始まり------*/
 
 .mypage h1 {
+  margin-top: 100px;
   margin-bottom: 50px;
   font-size: 50px;
   text-align: center;
 }
 
 .mypage h3 {
-  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*.mypage-posts {*/
+/*  padding: 0 200px 100px 200px;*/
+/*}*/
+
+/*.mypage-favorites {*/
+/*  padding: 0 200px 100px 200px;*/
+/*}*/
+
+.favorite .btn-unfavorite {
+  position: relative;
+  right: 45px;
 }
 
 
-/*------mypage終わり------*/
+/*------users/show.html終わり------*/
+
+/*------_posts.html始まり------*/
+.post-index {
+  margin-bottom: 40px;
+}
+
+.image img {
+  width: 210px;
+  height: 150px;
+  margin-right: 10px;
+  position: relative;
+  bottom: 20px;
+}
+
+.post {
+  margin-bottom: 30px; 
+}
+
+.table-store-name {
+  position: relative;
+  top: 5px;
+}
+
+.table-access {
+  position: relative;
+  left: 30px;
+  top: 5px;
+}
+
+.table-content {
+  display: flex;
+}
+
+.btn-delete {
+  position: relative;
+  left: 30px;
+  bottom: 10px;
+}
+
+.btn-favorite {
+  position: relative;
+  bottom: 10px;
+}
+
+.btn-unfavorite {
+  position: relative;
+  bottom: 34px;
+}
+
+.form-favorite {
+  width: 98px;
+  height: 31px;
+}
+
+.post-btn {
+  float: right;
+  display: flex;
+  position: relative;
+  top: 10px;
+  right: 30px;
+}
+
+/*------_posts.html終わり------*/
+
+/*------_favorites.html始まり------*/
+.favorite {
+  margin-bottom: 30px; 
+}
+
+/*------_favorites.html終わり------*/
+
+/*------search始まり------*/
+.search-form {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.search-form h1 {
+  font-size: 50px;
+}
+
+.search-result {
+  padding: 0 200px 100px 200px;
+}
+
+.btn-search {
+  margin-top: 10px;
+  margin-bottom: 13px;
+}
+
+.search-post-btn {
+  float: right;
+  display: flex;
+  width: 290px;
+  position: relative;
+  top: 10px;
+  right: 30px;
+}
+
+.search-table-store-name {
+  position: relative;
+  top: 3px;
+}
+
+.search-table-access {
+  position: relative;
+  left: 30px;
+  top: 3px;
+}
+
+.search-btn-favorite {
+  position: relative;
+  bottom: 11px;
+  left: 100px;
+}
+
+.search-btn-unfavorite {
+  position: relative;
+  bottom: 35px;
+  left: 100px;
+}
+
+.search-btn-delete {
+  position: relative;
+  bottom: 11px;
+  left: 80px;
+}
+
+/*------serach.html終わり------*/
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+/*タブレット用始まり*/
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+@media screen and (max-width: 959px) {
+  
+/*全体共通始まり*/
+  
+.clear {
+  clear: both;
+}  
+
+/*全体共通終わり*/
+
+/*共通部分始まり*/
+header h1 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+header ul {
+ font-size: 11px;
+ margin-left: 135px;
+}
+
+.navbar-nav {
+  margin-left: 130px;
+}
+
+header li {
+  margin-top: 5px;
+}
+
+footer h1 {
+  font-size: 20px;
+}
+
+footer p {
+  font-size: 13px;
+}
+
+.wrapper {
+  min-height: 92vh;
+}
+
+/*共通部分終わり*/
+
+/*toppages/index.html始まり*/
+.main {
+  width: 600px;
+}
+
+.main-content {
+  width: 730px;
+}
+
+
+/*toppages/index.html終わり*/
+
+/*posts/index.html始まり*/
+.table-store-name, .table-access {
+  position: relative;
+  top: 2px;
+}
+
+.posts-page {
+  padding: 100px 80px;
+}
+
+.table-access {
+  position: relative;
+  left: 30px;
+}
+
+
+.btn-delete {
+  position: relative;
+  left: -370px;
+  bottom: 5px;
+  font-size: 10px;
+  height: 25px;
+}
+
+.btn-favorite {
+  position: relative;
+  bottom: 6px;
+  left: -375px;
+  font-size: 10px;
+}
+
+.btn-unfavorite {
+  position: relative;
+  bottom: 30px;
+  left: -375px;
+  font-size: 10px;
+}
+
+/*posts/index.html終わり*/
+
+/*------_posts.html始まり------*/
+.post-index {
+  display: block;
+}
+
+.image img {
+  width: 170px;
+  height: 105px;
+  margin-bottom: 5px;
+}
+
+/*------_posts.html終わり------*/
+
+/*posts/search.html始まり*/
+.search-form {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.search-form h1 {
+  font-size: 50px;
+}
+
+.search-result {
+  padding: 0 80px 100px 80px;
+}
+
+.btn-search {
+  margin-top: 10px;
+  margin-bottom: 13px;
+}
+
+.search-result th {
+  font-size: 12px;
+  padding: 0;
+  height: 80px;
+}
+
+.search-table-store-name {
+  font-size: 18px;
+  position: relative;
+  top: 15px;
+}
+
+.search-table-access {
+  font-size: 18px;
+  position: relative;
+  top: 15px;
+}
+
+.search-btn-favorite {
+  font-size: 10px;
+  position: relative;
+  bottom: -7px;
+  left: -210px;
+}
+
+.search-btn-unfavorite {
+  font-size: 10px;
+  position: relative;
+  bottom: 11px;
+  left: -210px;
+}
+
+.search-btn-delete {
+  position: relative;
+  left: -250px;
+  bottom: -7px;
+  font-size: 10px;
+  height: 25px;
+}
+
+/*posts/search.html終わり*/
+	
+/*users/show.html始まり*/
+.mypage h1 {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.mypage h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mypage-posts {
+  padding: 0 80px 100px 80px;
+}
+
+.mypage-posts .btn-delete {
+  position: relative;
+  bottom: 5px;
+  left: -325px;
+  font-size: 10px;
+}
+
+.mypage-posts .btn-favorite {
+  position: relative;
+  bottom: 6px;
+  left: -325px;
+  font-size: 10px;
+}
+
+.mypage-posts .btn-unfavorite {
+  position: relative;
+  bottom: 30px;
+  left: -325px;
+  font-size: 10px;
+}
+
+.btn-unfavorite {
+  position: relative;
+  bottom: 30px;
+  left: -375px;
+  font-size: 10px;
+}
+
+
+.mypage-favorites {
+  padding: 0 80px 100px 80px;
+}
+
+.favorite .btn-unfavorite {
+  position: relative;
+  left: -335px!important;
+}
+
+/*users/show.html終わり*/
+	
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+/*タブレット用終わり*/
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+/*スマホ用始まり*/
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+@media screen and (max-width: 480px) {
+  
+  /*全体共通始まり */
+.container {
+  width: 360px;
+}
+
+.clear {
+  clear: both;
+}
+  /*全体共通終わり */
+  
+	/*共通部分始まり*/
+header h1 {
+  font-size: 2px;
+  margin: 23px 0 0 75px;
+}
+
+header a {
+  color: black;
+  font-weight: bold;
+}
+
+header ul {
+ font-size: 13px;
+}
+
+header li {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+
+footer h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+footer div {
+  display: block;
+  color: #ffffff;
+}
+
+footer p {
+  font-size: 13px;
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+.navbar-toggler {
+  position: relative;
+  left: 280px;
+  bottom: 37px;
+  padding: 5px 8px 5px 8px;
+  background-color: white;
+}
+
+.navbar {
+  position: relative;
+  right: 7px;
+  margin: 0;
+}
+
+.navbar-nav {
+  position: relative;
+  /*right: 50px;*/
+  margin-left: 0px;
+  width: 375px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+#navbarSupportedContent {
+ position: relative;
+ bottom: 17px;
+ right: 9px;
+ z-index: 10;
+ background-color: white;
+ opacity: 0.7;
+}
+
+
+/*共通部分終わり*/
+
+/*toppages/index.html始まり*/
+.top-content h2 {
+  font-size: 40px!important;
+}
+
+.main {
+  display: block;
+  width: 350px;
+  padding-top: 50px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main p {
+  margin-top: 10px;
+}
+
+.main-content {
+  display: block;
+  width: 350px;
+  padding-top: 50px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-content p {
+  margin-top: 10px;
+}
+
+.top-search-textarea {
+  width: 200px;
+}
+
+
+/*toppages/index.html終わり*/
+
+/*posts/index.html始まり*/
+.table-store-name, .table-access {
+  position: relative;
+  top: 2px;
+  font-size: 12px;
+}
+
+.posts-page {
+  padding: 100px 10px;
+}
+
+
+.table-access {
+  position: relative;
+  left: 20px;
+}
+
+
+.btn-delete {
+  position: relative;
+  left: -130px;
+  bottom: 3px;
+  font-size: 10px;
+  height: 25px;
+}
+
+.btn-favorite {
+  position: relative;
+  bottom: 4px;
+  left: -130px;
+  font-size: 10px;
+}
+
+.btn-unfavorite {
+  position: relative;
+  bottom: 28px;
+  left: -130px;
+  font-size: 10px;
+}
+
+/*posts/index.html終わり*/
+
+/* ------posts/new始まり------ */
+
+.post-form {
+  text-align: center;
+  padding: 100px, 10px;
+}
+
+.post-form h1 {
+  margin-top: 55px;
+  font-size: 50px;
+}
+
+.post-form label {
+  display: block;
+  width: 300px;
+  text-align: left;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.post-form input {
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.post-form .btn {
+  margin-top: 50px;
+  width: 200px !important;
+}
+
+.post-form input {
+  width: 300px!important;
+}
+
+.post-form textarea {
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* ------posts/new終わり------ */
+
+/*------_posts.html始まり------*/
+.post-index {
+  display: block;
+}
+
+.image img {
+  width: 200px;
+  height: 135px;
+}
+
+.table-content {
+  display: block;
+}
+
+/*------_posts.html終わり------*/
+
+
+/*posts/search.html始まり*/
+.search-form {
+  text-align: center;
+  margin-top: 160px;
+  margin-bottom: 50px;
+}
+
+.search-form h1 {
+  font-size: 50px;
+}
+
+.search-result {
+  padding: 0 10px 100px 10px;
+}
+
+.btn-search {
+  margin-top: 10px;
+  margin-bottom: 13px;
+}
+
+.search-result th {
+  font-size: 12px;
+  padding: 0;
+}
+
+.search-table-store-name {
+  font-size: 12px;
+  position: relative;
+  top: 2px;
+}
+
+.search-table-access {
+  font-size: 12px;
+  position: relative;
+  top: 2px;
+}
+
+.search-btn-favorite {
+  font-size: 10px;
+  position: relative;
+  bottom: 0px;
+  left: 20px;
+}
+
+.search-btn-unfavorite {
+  font-size: 10px;
+  position: relative;
+  bottom: 18px;
+  left: 20px;
+}
+
+.search-btn-delete {
+  position: relative;
+  left: -25px;
+  bottom: 0px;
+  font-size: 10px;
+  height: 25px;
+}
+
+.search-result th {
+  font-size: 12px;
+  padding: .75rem;
+}
+
+.narrow {
+  height: 10px!important;
+  padding-top: 0px;
+}
+
+/*posts/search.html終わり*/
+	
+/*users/show.html始まり*/
+.mypage h1 {
+  margin-top: 155px;
+  margin-bottom: 50px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.mypage h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mypage-posts {
+  padding: 0 10px 100px 10px;
+}
+
+.mypage-posts .btn-delete {
+  position: relative;
+  left: -112px;
+}
+
+.mypage-posts .btn-favorite {
+  position: relative;
+  left: -115px;
+}
+
+.mypage-posts .btn-unfavorite {
+  position: relative;
+  left: -115px;
+}
+
+.mypage-favorites {
+  padding: 0 10px 100px 10px;
+}
+
+.mypage-favorites .btn-unfavorite {
+  position: relative;
+  left: -125px!important;
+}
+
+
+/*users/show.html終わり*/
+	
+
+	
+	
+	
+}
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+/*スマホ用終わり*/
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
