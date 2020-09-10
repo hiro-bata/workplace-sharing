@@ -48,6 +48,9 @@ a:hover {
   float: left;
 }
 
+.alert {
+  margin-bottom: 0;
+}
 
 /*------共通部分始まり------*/
 header {
@@ -336,14 +339,6 @@ footer h1 {
   font-weight: bold;
 }
 
-/*.mypage-posts {*/
-/*  padding: 0 200px 100px 200px;*/
-/*}*/
-
-/*.mypage-favorites {*/
-/*  padding: 0 200px 100px 200px;*/
-/*}*/
-
 .favorite .btn-unfavorite {
   position: relative;
   right: 45px;
@@ -451,12 +446,23 @@ footer h1 {
   right: 30px;
 }
 
-.search-table-store-name {
+.search-result .search-table-store-name {
   position: relative;
-  top: 3px;
+  bottom: 8px;
 }
 
-.search-table-access {
+.search-result .search-table-access {
+  position: relative;
+  left: 30px;
+  bottom: 8px;
+}
+
+.logged-search-table-store-name {
+  position: relative;
+  top: 3px;  
+}
+
+.logged-search-table-access {
   position: relative;
   left: 30px;
   top: 3px;

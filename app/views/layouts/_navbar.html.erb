@@ -1,12 +1,15 @@
     <header>
         <nav class="container navbar navbar-expand-md navbar-light">
-            <h1><a class="navbar-brand text-white font-weight-normal" href="/">Workplace Sharing</a></h1>
+            <h1><a class="navbar-brand text-white font-weight-normal" href="/">PRO-LABO</a></h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <% if logged_in? %>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
+                <% if current_user.admin? %>
+                    <li class="nav-item"><%= link_to "ユーザー一覧", users_path %></li>
+                <% end %>
                 <li class="nav-item active"><%= link_to "My page", user_path(current_user) %></li>
                 <li class="nav-item"><%= link_to "投稿一覧", posts_path %></li>
                 <li class="nav-item"><%= link_to "検索ページ", search_posts_path %></li>

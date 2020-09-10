@@ -12,7 +12,7 @@
                 <tbody>
                     <tr>
                         <th class="border px-4 bg-primary text-white<%= "border px-4 py-0 pt-3 bg-primary text-white narrow" unless logged_in? %>">
-                            <div class="float-left"><span class="search-table-store-name">店名：<%= post.store_name %></span><span class="search-table-access">最寄駅：<%= post.access %></span></div>
+                            <div class="float-left"><span class="search-table-store-name <%= "logged-search-table-store-name" if logged_in? %>">店名：<%= post.store_name %></span><span class="search-table-access <%= "logged-search-table-access" if logged_in? %>">最寄駅：<%= post.access %></span></div>
                             <div class="search-post-btn clear">
                             　<% if logged_in? %>
                                 　<% if current_user.favorite?(post) %>

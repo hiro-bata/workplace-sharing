@@ -1,0 +1,10 @@
+<div class="mt-5">
+    
+    <% @users.each do |user| %>
+        <div class="px-5 mt-2 d-flex">
+            <h4>ID：<%= user.id %> | ユーザー名：<%= user.name %></h4>
+            <%= link_to "削除", user_path(user), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm btn-delete" %>
+        </div>
+    <% end %>
+    
+</div>
