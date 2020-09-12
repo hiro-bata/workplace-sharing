@@ -11,6 +11,11 @@ class UsersController < ApplicationController
       @favorites = current_user.favorite_posts.includes(:user)
   end
   
+  def likes
+    @user = User.find(params[:id])
+    @favorites = current_user.favorite_posts.includes(:user)
+  end
+  
   def new
     @user = User.new
   end
@@ -32,6 +37,8 @@ class UsersController < ApplicationController
     flash[:success] = "ユーザーを削除しました。"
     redirect_back(fallback_location: root_path)
   end
+  
+  
   
   private
   
