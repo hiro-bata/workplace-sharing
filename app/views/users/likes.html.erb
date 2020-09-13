@@ -2,7 +2,7 @@
     <h1><%= @user.name %>'s Page</h1>
     <div class="mypage-favorites container">
         <h6><%= link_to "投稿一覧へ", @user %></h6>
-        <h3>お気に入り一覧</h3>
+        <h3 class="font-weight-normal">お気に入り一覧</h3>
         <%= render "posts/favorites", favorites: @favorites %>
     </div>
 </div>
