@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    @post.image = "default.jpg"
+    # @post.image = "default.jpg"
     if @post.save
       flash[:success] = "投稿が完了しました。"
       redirect_to posts_url
