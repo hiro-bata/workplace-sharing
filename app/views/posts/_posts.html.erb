@@ -10,7 +10,7 @@
                             <div class="float-left"><span class="table-store-name">店名：<%= post.store_name %></span><span class="table-access">最寄駅：<%= post.access %></span></div>
                             <div class="post-btn clear">
                                 <%= render "favorites/favorite_button", post: post %>
-                                <% if current_user == post.user %>
+                                <% if current_user == post.user || current_user.admin? %>
                                     <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm btn-delete" %>
                                 <% else %>
                                     <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm btn-delete visibility-hidden" %>
