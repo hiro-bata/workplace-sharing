@@ -9,14 +9,13 @@
 # And be sure to use new-style password hashing:
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
-  
-production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  database: message-board_production
-  username: message-board
-  password: <%= ENV['MESSAGE-BOARD_DATABASE_PASSWORD'] %>
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password:
+  host: localhost
 
 development:
   <<: *default
@@ -53,3 +52,11 @@ production:
   database: workplace-sharing_production
   username: workplace-sharing
   password: <%= ENV['WORKPLACE-SHARING_DATABASE_PASSWORD'] %>
+  
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: message-board_production
+  username: message-board
+  password: <%= ENV['MESSAGE-BOARD_DATABASE_PASSWORD'] %>
