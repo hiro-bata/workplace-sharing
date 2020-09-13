@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:destroy]
   
   def index
-       @posts = Post.order(id: :desc).page(params[:page])
+       @posts = Post.order(id: :desc).page(params[:page]).per(5)
   end
 
   def new
@@ -33,8 +33,10 @@ class PostsController < ApplicationController
   def search
     if params[:access].present?
       @posts = Post.where('access LIKE ?', "%#{params[:access]}%")
+      @posts = @posts.page(params[:page]).per(5)
     else
       @posts = Post.none
+      @posts = @posts.page(params[:page]).per(5)
     end
   end
   

@@ -1,10 +1,11 @@
+<div>    
     <% posts.each do |post| %>
     <p class="post-person">投稿者：<%= post.user.name %></p>
     <div class="post-index">
         <table class="table">
             <tbody>
                 <tr>
-                    <th class="border pl-2 bg-primary text-white">
+                    <th class="border px-4 ">
                         <% if logged_in? %>
                             <div class="float-left"><span class="table-store-name">店名：<%= post.store_name %></span><span class="table-access">最寄駅：<%= post.access %></span></div>
                             <div class="post-btn clear">
@@ -43,6 +44,5 @@
         </table>
     </div>
     <% end %>
-    <%= paginate posts %>
-
+</div>
 

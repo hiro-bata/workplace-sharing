@@ -15,6 +15,9 @@ body {
   width: 1300px;
 }
 
+a:hover {
+  text-decoration: none;
+}
 
 .display-block {
   display: block;
@@ -43,10 +46,19 @@ body {
   margin-bottom: 0;
 }
 
+th {
+  background-color: #EEE8AA;
+}
+
+.paginate {
+  padding-left: 150px;
+  padding-bottom: 100px;
+}
+
 /*------共通部分始まり------*/
 header {
   justify-content: space-between;
-  background-color: #000000;
+  background-color: #333333;
   color: #ffffff;
   height: 90px;
 }
@@ -90,7 +102,7 @@ header nav ul li {
 
 /*footer*/
 footer {
-  background-color: #000000;
+  background-color: #333333;
   height: 90px;
   margin-top: auto;
 }
@@ -334,7 +346,7 @@ footer a:hover {
 
 /*------posts/index.html始まり------*/
 .posts-page {
-  padding: 100px 200px;
+  padding: 100px 200px 0 200px;
 }
 
 .posts-page h1 {
@@ -346,6 +358,7 @@ footer a:hover {
 /*------posts/index.html終わり------*/
 
 /*------users/show.html始まり------*/
+
 
 .mypage h1 {
   margin-top: 100px;
@@ -449,7 +462,7 @@ footer a:hover {
 }
 
 .search-result {
-  padding: 0 200px 100px 200px;
+  padding: 0 200px 0 200px;
 }
 
 .btn-search {
@@ -521,6 +534,10 @@ footer a:hover {
   clear: both;
 }  
 
+.paginate {
+  padding-left: 80px;
+  padding-bottom: 100px;
+}
 /*全体共通終わり*/
 
 /*共通部分始まり*/
@@ -579,7 +596,7 @@ footer p {
 }
 
 .posts-page {
-  padding: 100px 80px;
+  padding: 100px 80px 0 80px;
 }
 
 .table-access {
@@ -637,7 +654,7 @@ footer p {
 }
 
 .search-result {
-  padding: 0 80px 100px 80px;
+  padding: 0 80px 0 80px;
 }
 
 .btn-search {
@@ -701,7 +718,7 @@ footer p {
 }
 
 .mypage-posts {
-  padding: 0 80px 100px 80px;
+  padding: 0 80px 0 80px;
 }
 
 .mypage-posts .btn-delete {
@@ -734,7 +751,7 @@ footer p {
 
 
 .mypage-favorites {
-  padding: 0 80px 100px 80px;
+  padding: 0 80px 0 80px;
 }
 
 .favorite .btn-unfavorite {
@@ -803,6 +820,10 @@ footer p {
   font-size: 13px;
   text-align: center;
   margin: 10px 0 0 0;
+}
+
+.nav-item a {
+  color: #000000!important;
 }
 
 .navbar-toggler {
@@ -884,7 +905,7 @@ footer p {
 }
 
 .posts-page {
-  padding: 100px 10px;
+  padding: 100px 10px 0 10px;
 }
 
 
@@ -991,7 +1012,7 @@ footer p {
 }
 
 .search-result {
-  padding: 0 10px 100px 10px;
+  padding: 0 10px 0 10px;
 }
 
 .btn-search {
