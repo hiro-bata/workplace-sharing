@@ -57,6 +57,6 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: message-board_production
-  username: message-board
-  password: <%= ENV['MESSAGE-BOARD_DATABASE_PASSWORD'] %>
+  database: workplace-sharing_production
+  username: workplace-sharing
+  password: <%= ENV['WORKPLACE-SHARING_DATABASE_PASSWORD'] %>
