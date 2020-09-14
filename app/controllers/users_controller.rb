@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show, :likes]
+  before_action :require_user_logged_in, only: [:index, :likes]
   before_action :user_admin, only: [:index]
+  before_action :current_user?, only: [:show]
   
   def index
   end
   
   def show
-      @user = User.find(params[:id])
       @posts = @user.posts.order(id: :desc).page(params[:page]).per(5)
       @favorites = current_user.favorite_posts.includes(:user)
   end
@@ -53,6 +53,13 @@ class UsersController < ApplicationController
       else
           render action: "index"
       end
+  end
+  
+  def current_user?
+    @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to root_path
+    end
   end
 
 
