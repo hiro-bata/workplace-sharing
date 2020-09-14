@@ -1,7 +1,7 @@
     <section class="post-form">
         <h1>Post Here!!</h1>
         <%= form_with(model: @post, local: true) do |f| %>
-      
+        <%= render 'layouts/error_messages', model: f.object %>
         <div class="form-group">
           <%= f.label :store_name, '店名' %>
           <%= f.text_field :store_name, class: 'form-control' %>
