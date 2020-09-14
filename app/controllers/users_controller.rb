@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :likes]
   before_action :user_admin, only: [:index]
-  before_action :current_user?, only: [:show]
+  before_action :current_user?, only: [:show, :likes]
   
   def index
   end
