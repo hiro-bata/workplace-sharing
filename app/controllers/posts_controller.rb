@@ -32,13 +32,10 @@ class PostsController < ApplicationController
   end
   
   def search
-      # search_word = Post.find_by(access： params[:access])
     if params[:access].present?
       @posts = Post.where('access LIKE ?', "%#{params[:access]}%")
       if @posts.present?
-        # params[:access].present?
-        # @posts = Post.where('access LIKE ?', "%#{params[:access]}%")
-        @posts = @posts.page(params[:page]).per(5)
+        @posts = @posts.order(id: :desc).page(params[:page]).per(5)
       else
         flash.now[:danger] = "検索がHitしませんでした。"
         @posts = Post.none
@@ -46,7 +43,7 @@ class PostsController < ApplicationController
       end
     else
       @posts = Post.all
-      @posts = @posts.page(params[:page]).per(5)
+      @posts = @posts.order(id: :desc).page(params[:page]).per(5)
     end
   end
   
