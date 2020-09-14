@@ -584,6 +584,8 @@ footer p {
 /*toppages/index.html始まり*/
 .main {
   width: 100%;
+  padding-right: 100px;
+  padding-left: 100px;
 }
 
 .main-content {
@@ -592,6 +594,19 @@ footer p {
 
 
 /*toppages/index.html終わり*/
+
+/*users/index.html始まり*/
+
+.user-index {
+  padding: 0 70px;
+}
+
+.user-index .btn-delete {
+  left: 30px;
+}
+
+
+/*users/index.html終わり*/
 
 /*posts/index.html始まり*/
 .table-store-name, .table-access {
@@ -905,6 +920,23 @@ footer p {
 
 
 /*toppages/index.html終わり*/
+
+/*users/index.html始まり*/
+
+.user-index {
+  padding: 0;
+}
+
+.user-index h4 {
+  font-size: 15px;
+}
+
+.user-index .btn-delete {
+  left: 30px;
+}
+
+
+/*users/index.html終わり*/
 
 /*posts/index.html始まり*/
 .table-store-name, .table-access {
