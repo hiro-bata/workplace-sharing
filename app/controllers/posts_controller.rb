@@ -37,7 +37,7 @@ class PostsController < ApplicationController
       if @posts.present?
         @posts = @posts.order(id: :desc).page(params[:page]).per(5)
       else
-        flash.now[:danger] = "検索がHitしませんでした。"
+        flash.now[:danger] = "検索結果がありませんでした。"
         @posts = Post.none
         @posts = @posts.page(params[:page]).per(5)
       end
