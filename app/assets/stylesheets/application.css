@@ -176,8 +176,7 @@ footer a:hover {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 80px;
+  padding: 50px 130px 80px;
   margin: 0 auto;
   text-align: center;
 }
@@ -590,6 +589,7 @@ footer p {
 
 .main-content {
   width: 100%;
+  padding: 50px 20px 80px;
 }
 
 
@@ -791,7 +791,7 @@ footer p {
 /*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 575px) {
   
   /*全体共通始まり */
 .container {
