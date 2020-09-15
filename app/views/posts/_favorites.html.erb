@@ -5,6 +5,7 @@
                 <tbody>
                     <tr>
                         <th class="border px-4 ">
+                            <div>お気に入り数：<%= @post.favorites.count %></div>
                             <div class="float-left"><span class="table-store-name">店名：<%= favorite.store_name %></span><span class="table-access">最寄駅：<%= favorite.access %></span></div>
                             <div class="post-btn clear">
                                 <% if current_user.favorite?(favorite) %>

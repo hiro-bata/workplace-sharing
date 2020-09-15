@@ -8,12 +8,12 @@ class UsersController < ApplicationController
   
   def show
       @posts = @user.posts.order(id: :desc).page(params[:page]).per(5)
-      @favorites = current_user.favorite_posts.includes(:user)
   end
   
   def likes
     @user = User.find(params[:id])
     @favorites = current_user.favorite_posts.includes(:user).page(params[:page]).per(5)
+    @post = Post.find_by(user_id: params[:id])
   end
   
   def new
