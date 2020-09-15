@@ -5,13 +5,13 @@
                 <tbody>
                     <tr>
                         <th class="border px-4 ">
-                            <div>お気に入り数：<%= favorite.favorites.count %></div>
+                            <div class="good">Good数：<%= favorite.favorites.count %></div>
                             <div class="float-left"><span class="table-store-name">店名：<%= favorite.store_name %></span><span class="table-access">最寄駅：<%= favorite.access %></span></div>
                             <div class="post-btn clear">
                                 <% if current_user.favorite?(favorite) %>
                                     <%= form_with(model: current_user.favorites.find_by(post_id: favorite.id), local: true, method: :delete, class: "form-favorite") do |f| %>
                                       <%= hidden_field_tag :post_id, favorite.id %>　
-                                      <%= f.submit 'お気に入り解除', class: 'btn btn-danger btn-sm btn-unfavorite' %>
+                                      <%= f.submit 'Good解除', class: 'btn btn-danger btn-sm btn-unfavorite' %>
                                     <% end %>
                                 <% end %>
                             </div>

@@ -13,19 +13,19 @@
                 <tbody>
                     <tr>
                         <th class="border px-4 <%= "border px-4 py-0 pt-3 narrow" unless logged_in? %>">
-                            <div class="mb-2">お気に入り数：<%= post.favorites.count %></div>
+                            <div class="search-result-good mb-2">Good数：<%= post.favorites.count %></div>
                             <div class="float-left"><span class="search-table-store-name <%= "logged-search-table-store-name" if logged_in? %>">店名：<%= post.store_name %></span><span class="search-table-access <%= "logged-search-table-access" if logged_in? %>">最寄駅：<%= post.access %></span></div>
                             <div class="search-post-btn clear">
                             　<% if logged_in? %>
                                 　<% if current_user.favorite?(post) %>
                                       <%= form_with(model: current_user.favorites.find_by(post_id: post.id), local: true, method: :delete, class: "form-favorite") do |f| %>
                                         <%= hidden_field_tag :post_id, post.id %>　
-                                        <%= f.submit 'お気に入り解除', class: 'btn btn-danger btn-sm search-btn-unfavorite' %>
+                                        <%= f.submit 'Good解除', class: 'btn btn-danger btn-sm search-btn-unfavorite' %>
                                       <% end %>
                                   <% else %>
                                       <%= form_with(model: current_user.favorites.build, local: true, class: "form-favorite") do |f| %>
                                         <%= hidden_field_tag :post_id, post.id %>
-                                        <%= f.submit 'お気に入り登録', class: 'btn btn-success btn-sm search-btn-favorite' %>
+                                        <%= f.submit 'Good登録', class: 'btn btn-success btn-sm search-btn-favorite' %>
                                       <% end %>
                                   <% end %>
                             　<% end %>

@@ -2,7 +2,7 @@
     <h1><%= @user.name %>'s Page</h1>
     <div class="mypage-posts container">
         <h3 class="font-weight-normal">My 投稿一覧</h3>
-        <h6><%= link_to "お気に入り一覧へ", likes_user_path(@user) %></h6>
+        <h6><%= link_to "Good一覧へ", likes_user_path(@user) %></h6>
         <%= render "posts/posts", posts: @posts %>
     </div>
 </div>

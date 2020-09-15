@@ -91,7 +91,7 @@ header nav ul {
   display: flex;
   list-style: none;
   margin-top: 15px;
-  margin-left: 440px;
+  /*margin-left: 440px;*/
 }
 
 header nav ul li {
@@ -102,6 +102,10 @@ header nav ul li {
   float: left;
   position: relative;
   width: 90px;
+}
+
+.navbar {
+  height: 80px;
 }
 
 /*footer*/
@@ -424,11 +428,13 @@ footer a:hover {
 .btn-favorite {
   position: relative;
   bottom: 10px;
+  left: 30px;
 }
 
 .btn-unfavorite {
   position: relative;
   bottom: 34px;
+  left: 30px;
 }
 
 .form-favorite {
@@ -507,13 +513,13 @@ footer a:hover {
 .search-btn-favorite {
   position: relative;
   bottom: 11px;
-  left: 100px;
+  left: 140px;
 }
 
 .search-btn-unfavorite {
   position: relative;
   bottom: 35px;
-  left: 100px;
+  left: 140px;
 }
 
 .search-btn-delete {
@@ -635,14 +641,14 @@ footer p {
 .btn-favorite {
   position: relative;
   bottom: 6px;
-  left: -375px;
+  left: -350px;
   font-size: 10px;
 }
 
 .btn-unfavorite {
   position: relative;
-  bottom: 30px;
-  left: -375px;
+  bottom: 6px;
+  left: -370px;
   font-size: 10px;
 }
 
@@ -684,7 +690,7 @@ footer p {
 .search-result th {
   font-size: 12px;
   padding: 0;
-  height: 80px;
+  height: 100px;
 }
 
 .search-table-store-name {
@@ -702,23 +708,30 @@ footer p {
 .search-btn-favorite {
   font-size: 10px;
   position: relative;
-  bottom: -7px;
-  left: -210px;
+  bottom: -5px;
+  left: -220px;
 }
 
 .search-btn-unfavorite {
   font-size: 10px;
   position: relative;
-  bottom: 11px;
-  left: -210px;
+  bottom: -5px;
+  left: -235px;
 }
 
 .search-btn-delete {
   position: relative;
-  left: -250px;
-  bottom: -7px;
+  left: -285px;
+  top: 5px;
   font-size: 10px;
   height: 25px;
+}
+
+.search-result-good {
+  position: relative;
+  top: 10px;
+  margin-bottom: 0px!important;
+  font-size: 16px;
 }
 
 /*posts/search.html終わり*/
@@ -750,23 +763,17 @@ footer p {
 .mypage-posts .btn-favorite {
   position: relative;
   bottom: 6px;
-  left: -325px;
+  left: -305px;
   font-size: 10px;
 }
 
 .mypage-posts .btn-unfavorite {
   position: relative;
-  bottom: 30px;
+  bottom: 6px;
   left: -325px;
   font-size: 10px;
 }
 
-.btn-unfavorite {
-  position: relative;
-  bottom: 30px;
-  left: -375px;
-  font-size: 10px;
-}
 
 
 .mypage-favorites {
@@ -775,7 +782,8 @@ footer p {
 
 .favorite .btn-unfavorite {
   position: relative;
-  left: -335px!important;
+  left: -355px!important;
+  bottom: 3px;
 }
 
 /*users/show.html終わり*/
@@ -805,6 +813,10 @@ footer p {
 .paginate {
   margin: 0 auto;
   padding-left: 0;
+}
+
+.good {
+  font-size: 12px;
 }
   /*全体共通終わり */
   
@@ -967,13 +979,13 @@ footer p {
 .btn-favorite {
   position: relative;
   bottom: 4px;
-  left: -130px;
+  left: -108px;
   font-size: 10px;
 }
 
 .btn-unfavorite {
   position: relative;
-  bottom: 28px;
+  bottom: 4px;
   left: -130px;
   font-size: 10px;
 }
@@ -1056,6 +1068,11 @@ footer p {
   padding: 0 10px 0 10px;
 }
 
+.search-result-good {
+  font-size: 12px;
+  margin-bottom: 10px!important;
+}
+
 .btn-search {
   margin-top: 10px;
   margin-bottom: 13px;
@@ -1063,7 +1080,8 @@ footer p {
 
 .search-result th {
   font-size: 12px;
-  padding: 0;
+  padding: 0 1.5rem!important;
+  height: 30px;
 }
 
 .search-table-store-name {
@@ -1081,21 +1099,21 @@ footer p {
 .search-btn-favorite {
   font-size: 10px;
   position: relative;
-  bottom: 0px;
+  bottom: 8px;
   left: 20px;
 }
 
 .search-btn-unfavorite {
   font-size: 10px;
   position: relative;
-  bottom: 18px;
-  left: 20px;
+  bottom: 8px;
+  left: 3px;
 }
 
 .search-btn-delete {
   position: relative;
-  left: -25px;
-  bottom: 0px;
+  left: -47px;
+  top: -8px;
   font-size: 10px;
   height: 25px;
 }
@@ -1125,23 +1143,24 @@ footer p {
   font-weight: bold;
 }
 
+
 .mypage-posts {
   padding: 0 10px 100px 10px;
 }
 
 .mypage-posts .btn-delete {
   position: relative;
-  left: -112px;
+  left: -132px;
 }
 
 .mypage-posts .btn-favorite {
   position: relative;
-  left: -115px;
+  left: -108px;
 }
 
 .mypage-posts .btn-unfavorite {
   position: relative;
-  left: -115px;
+  left: -128px;
 }
 
 .mypage-favorites {
@@ -1156,9 +1175,13 @@ footer p {
 
 /*users/show.html終わり*/
 	
-
+/*likes.html始まり*/
+.favorite .btn-unfavorite {
+  position: relative;
+  left: -166px!important;
+}
 	
-	
+/*likes.html終わり*/	
 	
 }
 

@@ -7,7 +7,7 @@
                 <tr>
                     <th class="border px-4 ">
                         <% if logged_in? %>
-                        <div>お気に入り数：<%= post.favorites.count %></div>
+                        <div class="good" >Good数：<%= post.favorites.count %></div>
                             <div class="float-left"><span class="table-store-name">店名：<%= post.store_name %></span><span class="table-access">最寄駅：<%= post.access %></span></div>
                             <div class="post-btn clear">
                                 <%= render "favorites/favorite_button", post: post %>
@@ -18,7 +18,7 @@
                                 <% end %>
                             </div>
                         <% else %>
-                        <div>お気に入り数：<%= post.favorites.count %></div>
+                        <div class="good" >Good数：<%= post.favorites.count %></div>
                             <span class="table-store-name">店名：<%= post.store_name %></span><span class="table-access">最寄駅：<%= post.access %></span>
                         <% end %>
                     </th>
