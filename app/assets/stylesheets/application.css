@@ -460,9 +460,18 @@ footer a:hover {
 /*------_favorites.html終わり------*/
 
 /*------search始まり------*/
+.search {
+  padding: 100px 200px 0 200px;
+}
+
+.search h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
 .search-form {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 30px;
   margin-bottom: 50px;
 }
 
@@ -668,9 +677,14 @@ footer p {
 /*------_posts.html終わり------*/
 
 /*posts/search.html始まり*/
+.search {
+  padding: 80px 80px 30px 80px;
+}
+
+
 .search-form {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 30px;
   margin-bottom: 50px;
 }
 
@@ -1054,14 +1068,15 @@ footer p {
 
 
 /*posts/search.html始まり*/
-.search-form {
-  text-align: center;
-  margin-top: 160px;
-  margin-bottom: 50px;
+.search {
+  padding: 100px 10px 0 10px;
 }
 
-.search-form h1 {
-  font-size: 50px;
+
+.search-form {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 .search-result {
